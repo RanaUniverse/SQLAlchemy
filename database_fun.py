@@ -97,6 +97,22 @@ def add_user_and_return_id_(name:str=None, age:int=0, gender:str=None, email:str
 
 
 
+def get_student_count_by_name(student_name: str = ""):
+    ''''
+    here i will pass the student name and i will get the full student obj
+    of all the row
+    '''
+    try:
+        student = session.query(Student).filter_by(name = student_name).all()
+        count_1 = student.__len__()
+        count_2 = len(student)
+
+        print(count_1)
+        print(count_2)
+        return student
+    except Exception as e:
+        print("Error retrieving student:", e)
+        return None
 
 
 
@@ -109,6 +125,8 @@ def add_user_and_return_id_(name:str=None, age:int=0, gender:str=None, email:str
 if __name__ == "__main__":
     # add_user_and_return_id("ranfdfa",232,343,4543,5,435,4,54,5,4)
     add_user_and_return_id_("ranfdfa", 232, "Male", "example@example.lcom", date.today())
+    get_student_count_by_name("Rana")
+
 
 
 
