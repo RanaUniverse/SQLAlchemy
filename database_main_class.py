@@ -44,6 +44,6 @@ class Student(Base):
 
 
     def __repr__(self):
-        return f"<Student(id={self.id},name={self.name}, age={self.age}, gender={self.gender}, email={self.email}, dob={self.date_of_birth})>"
+        return f"<Student(id={self.id_},name={self.name}, age={self.age}, gender={self.gender}, email={self.email}, dob={self.date_of_birth})>"
 
 
