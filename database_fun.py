@@ -131,6 +131,23 @@ def get_all_student_by_name(student_name: str = ""):
 
 
 
+def get_first_student_by_email(student_email: str = ""):
+    '''
+    here i will pass the student email id
+    then it will return the first row which email matches
+    '''
+    if student_email == "":
+        print("Please Give Real Email id, this email id cannot be blank")
+        return None
+    student_obj = session.query(Student).filter_by(email = student_email).first()
+    print(student_obj)
+    return student_obj
+
+
+
+
+
+
 
 
 if __name__ == "__main__":
