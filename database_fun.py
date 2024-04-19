@@ -146,6 +146,24 @@ def get_first_student_by_email(student_email: str = ""):
 
 
 
+def get_first_student_by_email(student_email: str = ""):
+    '''
+    Retrieves the first student object from the database based on their email.
+    '''
+    try:
+        if not student_email:
+            print("Please provide a valid email address.")
+            return None
+        
+        student_obj = session.query(Student).filter_by(email=student_email).first()
+        
+        if not student_obj:
+            print(f"No student found with email: {student_email}")
+        print(student_obj)
+        return student_obj
+    except Exception as e:
+        print("Error retrieving student:", e)
+        return None
 
 
 
