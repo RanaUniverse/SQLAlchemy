@@ -116,7 +116,18 @@ def get_student_count_by_name(student_name: str = ""):
 
 
 
-
+def get_all_student_by_name(student_name: str = ""):
+    ''''
+    here i will pass the student name and i will get the full student obj
+    of all the row
+    '''
+    try:
+        student = session.query(Student).filter_by(name = student_name).all()
+        print(student)
+        return student
+    except Exception as e:
+        print("Error retrieving student:", e)
+        return None
 
 
 
